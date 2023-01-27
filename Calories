@@ -1,0 +1,40 @@
+# create a dictionary to store food information
+foods = {
+    "apple": {
+        "calories": 52,
+        "serving_size": "1 medium (182g)"
+    },
+    "banana": {
+        "calories": 105,
+        "serving_size": "1 medium (126g)"
+    },
+    "chicken breast": {
+        "calories": 165,
+        "serving_size": "3.5 oz (100g)"
+    },
+    "brown rice": {
+        "calories": 216,
+        "serving_size": "1 cup (195g)"
+    },
+    "broccoli": {
+        "calories": 55,
+        "serving_size": "1 cup (91g)"
+    }
+}
+
+# function to calculate calorie intake
+def calculate_calories(food, serving_size):
+    # check if the food is in the dictionary
+    if food not in foods:
+        return f"{food} not found in database."
+    # get the calorie information for the food
+    food_info = foods[food]
+    calories = food_info["calories"]
+    # calculate the total number of calories
+    total_calories = calories * serving_size
+    return f"{serving_size} {food_info['serving_size']} of {food} contains {total_calories} calories."
+
+# test the function with some sample data
+print(calculate_calories("apple", 1))
+print(calculate_calories("chicken breast", 3))
+print(calculate_calories("brown rice", 2))
